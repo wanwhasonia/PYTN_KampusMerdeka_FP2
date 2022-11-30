@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Final Project 2 - Group 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="static/style.css">
+
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="wrap">
+    <form action="{{url_for('predict')}}" method="post">
+        <div class="form-header">
+            <h2>Rain Tomorrow Forecast in Australia</h2>
+        </div>
+        <div class="form-body">
+        <fieldset>
+        <label for="Rainfall">Rainfall (0.0 - 2.0) mm</label>
+        <input type="text" id="Rainfall" name="Rainfall" required>
+        <label for="Sunshine">Sunshine (0.0 - 14.0) hour</label>
+        <input type="text" id="Sunshine" name="Sunshine" required>
+        <label for="WindGustSpeed">Wind Gust Speed (7.0 - 73.5) km/h</label>
+        <input type="text" id="WindGustSpeed" name="WindGustSpeed" required>
+        <label for="Humidity3pm">Humidity 3 PM (0.0 - 100.0)%</label>
+        <input type="text" id="Humidity3pm" name="Humidity3pm" required>
+        <label for="Pressure9am">Pressure 9 AM (980.0 - 1041.0) hpa</label>
+        <input type="text" id="Pressure9am" name="Pressure9am" required>
+        <label for="RainToday">Is It Rain Today?</label>
+        <select id="RainToday" name="RainToday" required>
+            <option value=""></option><option value="1">Yes</option><option value="0">No</option>
+        </select>
+        </fieldset>
+        </div>
+        <div class="form-footer">
+        <input type="submit" value="Predict">
+        <div class="col-md-6">
+            <h3>{{ prediction_text }}</h3>
+        </div>
+        </div>
+    </form>
+    </div>
+    <!-- partial -->
+</body>
+</html>
