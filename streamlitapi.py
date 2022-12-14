@@ -19,8 +19,6 @@ def main():
         makeprediction = model.predict([[Rainfall, Sunshine, WindGustSpeed, Humidity3pm, Pressure9am, RainToday]])
         output=makeprediction[0]
         st.success('Besok tidak turun hujan')
-        output=makeprediction[1]
-        st.success('Besok akan turun hujan')
 
 if __name__=='__main__':
     main()
